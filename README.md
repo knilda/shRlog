@@ -8,7 +8,7 @@ created by knilda from lachenmair.info IT-Consulting
 An overview of firewall log data in R via Shiny App
 
 This is the first version of the App. 
-We select data from the last 6 hours of a graylog stream. 
+We select data from the last 6 hours of a graylog stream via elasticsearch REST API.
 
 Approved in R Version 3.4.2 (2017-09-28) and latest version (at date 01.07.2018) of following packages: 
 
