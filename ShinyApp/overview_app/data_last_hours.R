@@ -13,7 +13,6 @@ library(jsonlite)
 library(elastic)
 library(dplyr)
 library(iptools)
-library(expss)
 
 # set working directory of your data (can be any place, but should be the same as in file server.R)
 
@@ -26,7 +25,7 @@ connect(es_host = "192.168.200.9", es_port = 9200)
 # modify the name of your index here
 
 
-res_hour <-  Search(index = "graylog_36", body = '{
+res_hour <-  Search(index = "graylog_1", body = '{
                     "query": {
                     "range" : {
                     "timestamp" : {
@@ -36,13 +35,10 @@ res_hour <-  Search(index = "graylog_36", body = '{
                     }
                     }
                     }
-                    }', fields=c('timestamp','full_message','source', 'srcip', 'dstip', 'message','msg_id', 'dst_ip'), size = 10000)
+                    }', fields=c('timestamp','full_message','srcip', 'dstip'), size = 10000)
 
 
-#test
-#res_hour <- visits
-
-# can be added to shiny App as a Search Pattern: Specific Date and time range:
+# alternative search pattern: Specific Date and time range. e.g.:
 
 #res_day <-  Search(index = "graylog_29", body = '{
 #                "query": {
@@ -54,7 +50,7 @@ res_hour <-  Search(index = "graylog_36", body = '{
 #          }
 #         }
 #        }
-#       }', fields=c('timestamp','full_message','source', 'srcip', 'dstip', 'message','msg_id', 'dst_ip','whois'), size = 10000)
+#       }', fields=c('timestamp','full_message','srcip', 'dstip'), size = 10000)
 
 
 out_hour <- lapply(res_hour$hits$hits, function(x) unlist(x$fields, FALSE))
