@@ -6,6 +6,9 @@ created by knilda from lachenmair.info IT-Consulting
 
 
 An overview of firewall log data in R via Shiny App
+With the R Shiny App, it is possible to display an interactive graph showing all network connections passing the firewall.  
+
+See a short live demo here: https://youtu.be/2CiQqg4OvuM 
 
 This is the first version of the App. 
 We select data from the last 6 hours of a graylog stream via elasticsearch REST API.
