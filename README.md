@@ -5,7 +5,7 @@ Security Hub in R using Graylog
 created by knilda from lachenmair.info IT-Consulting
 
 
-An overview of firewall log data in R via Shiny App
+An overview of firewall log data in R via Shiny App.
 With the R Shiny App, it is possible to display an interactive graph showing all network connections passing the firewall.  
 
 Live Demo here: https://knilda.shinyapps.io/shrlog_example
